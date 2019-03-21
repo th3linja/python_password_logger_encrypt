@@ -1,7 +1,7 @@
 import string
 
 encrypted_file = open('encrypted_file', 'r')
-password_log = open('password_log', 'w')
+password_log = open('password_log', 'a')
 decrypter_file = open('decrypter_file', 'r')
 
 encrypted_text = [line.strip() for line in encrypted_file]
@@ -22,7 +22,10 @@ for char in range(len(password_to_encrypt)):
     else:
         encrypted_password += encrypted_text[decrypted_text.index(password_to_encrypt[char])]
 
-password_log.write(password_for + ": " + encrypted_password)
+password_log.write(password_for.strip() + ": " + encrypted_password + '\n')
 
 print(encrypted_password)
+
 encrypted_file.close()
+password_log.close()
+decrypter_file.close()
