@@ -34,3 +34,7 @@ for code in range(len(password_to_decrypt)):
 
 
 print(password)
+
+encrypted_file.close()
+password_log.close()
+decrypter_file.close()
